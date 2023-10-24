@@ -1,0 +1,22 @@
+{
+    "name": "igwen6w/filament-shop",
+    "description": "filament shop plugin",
+    "type": "library",
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Igwen6w\\FilamentShop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "igwen6w",
+            "email": "igwen6w@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
