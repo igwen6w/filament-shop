@@ -8,13 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ShopProduct extends Model
 {
     protected $fillable = [
-        'title',
-        'description',
-        'detail',
-        'specification',
-        'parameter',
-        'image',
-        'images',
+        'cover',
+        'slug',
         // 成本价
         'price_cost',
         // 原始价
@@ -27,13 +22,36 @@ class ShopProduct extends Model
         'review_count_real',
         'inventory_count',
         'status',
-        'rating'
+        'rating',
+        'like_count',
+        'share_count',
     ];
 
     protected $casts = [
-        'specification' => 'json',
         'status' => ShopProductStatus::class
     ];
+
+    public function categories()
+    {
+        return $this->belongsToMany(ShopCategory::class, 'shop_category_product');
+    }
+
+    public function images()
+    {
+//        return $this->hasMany();
+    }
+
+    public function intro()
+    {
+        return $this->hasOne(ShopProductIntro::class);
+    }
+
+    public function productCustomFields()
+    {
+        return $this->hasMany(ShopProductCustomField::class);
+    }
+
+
 
 
 }
